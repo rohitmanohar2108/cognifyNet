@@ -120,28 +120,28 @@ const ActionButtons = ({ onButtonClick }) => (
         onClick={() => onButtonClick("👍🏻 Liked")}
         className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
       >
-        <FontAwesomeIcon icon={faThumbsUp} className="mr-1 text-xl " />
+        <FontAwesomeIcon icon={faThumbsUp} className="mr-1 text-base " />
         Like
       </button>
       <button
         onClick={() => onButtonClick("💬 Commented")}
         className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
       >
-        <FontAwesomeIcon icon={faComment} className="mr-1 text-xl" />
+        <FontAwesomeIcon icon={faComment} className="mr-1 text-base" />
         Comment
       </button>
       <button
         onClick={() => onButtonClick("🔁 Reposted")}
         className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
       >
-        <FontAwesomeIcon icon={faShare} className="mr-1 text-xl" />
+        <FontAwesomeIcon icon={faShare} className="mr-1 text-base" />
         Repost
       </button>
       <button
         onClick={() => onButtonClick("➤ Sent")}
         className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
       >
-        <FontAwesomeIcon icon={faPaperPlane} className="mr-1 text-xl" />
+        <FontAwesomeIcon icon={faPaperPlane} className="mr-1 text-base" />
         Send
       </button>
     </div>
@@ -176,9 +176,9 @@ const TruncatedDescription = ({ description }) => {
       {description.length > maxLength && (
         <button
           onClick={toggleDescription}
-          className="text-blue-500 hover:underline mt-2"
+          className="text-blue-500  mt-2"
         >
-          {isExpanded ? "Show Less" : "....more"}
+          {isExpanded ? "Show Less" : "...more"}
         </button>
       )}
     </div>

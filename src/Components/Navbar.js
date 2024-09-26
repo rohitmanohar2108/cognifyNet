@@ -29,9 +29,9 @@ const Navbar = () => {
               <Link to={to} onClick={() => handleItemClick(label.toLowerCase().replace(" ", "-"))} className="flex flex-col items-center">
                 <FontAwesomeIcon
                   icon={icon}
-                  className={`text-xl mb-1 ${activeItem === label.toLowerCase().replace(" ", "-") ? 'text-black' : 'text-zinc-600'}`}
+                  className={`text-xl mb-1 ${activeItem === label.toLowerCase().replace(" ", "-") ? 'text-black ' : 'text-zinc-600 hover:text-black'}`}
                 />
-                <span className={`text-sm ${activeItem === label.toLowerCase().replace(" ", "-") ? 'text-black' : 'text-zinc-600'}`}>
+                <span className={`text-sm ${activeItem === label.toLowerCase().replace(" ", "-") ? 'text-black' : 'text-zinc-600 hover:text-black'}`}>
                   {label}
                 </span>
               </Link>
