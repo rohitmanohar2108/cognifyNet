@@ -102,7 +102,10 @@ const UserInfo = ({ post, onButtonClick }) => (
         <p className="text-gray-600 text-sm">Posted 1 hour ago</p>
       </div>
     </div>
-    <button onClick={() => onButtonClick("Followed")} className="text-blue-600 text-sm font-bold px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-500/15 transition duration-300">
+    <button
+      onClick={() => onButtonClick("Followed")}
+      className="text-blue-600 text-sm font-bold px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-500/15 transition duration-300"
+    >
       + Follow
     </button>
   </div>
