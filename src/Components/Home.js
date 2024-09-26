@@ -13,6 +13,7 @@ const Home = () => {
       id: 1,
       image: "https://via.placeholder.com/400x600",
       userImage: "https://via.placeholder.com/40",
+      userbio: "react dev",
       username: "John Doe",
       description: "Beautiful sunset at the beach! ".repeat(20),
     },
@@ -98,7 +99,7 @@ const UserInfo = ({ post, onButtonClick }) => (
       />
       <div>
         <h2 className="text-gray-800 font-semibold">{post.username}</h2>
-        <p className="text-gray-600 text-sm">CEO-CognifyWeb | CEO-filmNinja</p>
+        <p className="text-gray-600 text-sm">{post.userbio}</p>
         <p className="text-gray-600 text-sm">Posted 1 hour ago</p>
       </div>
     </div>
@@ -113,33 +114,33 @@ const UserInfo = ({ post, onButtonClick }) => (
 
 const ActionButtons = ({ onButtonClick }) => (
   <div className="flex justify-between items-center p-3">
-    <div className="flex space-x-9 ml-6">
+    <div className="flex space-x-3 ml-4">
       <button
         onClick={() => onButtonClick("Liked")}
-        className="flex items-center text-zinc-600 rounded hover:text-black px-4 py-2 hover:bg-blue-500/15"
+        className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
       >
-        <FontAwesomeIcon icon={faThumbsUp} className="mr-1" />
+        <FontAwesomeIcon icon={faThumbsUp} className="mr-1 text-xl " />
         Like
       </button>
       <button
         onClick={() => onButtonClick("Commented")}
-        className="flex items-center text-zinc-600 rounded hover:text-black px-4 py-2 hover:bg-blue-500/15"
+        className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
       >
-        <FontAwesomeIcon icon={faComment} className="mr-1" />
+        <FontAwesomeIcon icon={faComment} className="mr-1 text-xl" />
         Comment
       </button>
       <button
         onClick={() => onButtonClick("Reposted")}
-        className="flex items-center text-zinc-600 rounded hover:text-black px-3 py-2 hover:bg-blue-500/15"
+        className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
       >
-        <FontAwesomeIcon icon={faShare} className="mr-1" />
+        <FontAwesomeIcon icon={faShare} className="mr-1 text-xl" />
         Repost
       </button>
       <button
         onClick={() => onButtonClick("Sent")}
-        className="flex items-center text-zinc-600 rounded hover:text-black px-3 py-2 hover:bg-blue-500/15"
+        className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
       >
-        <FontAwesomeIcon icon={faPaperPlane} className="mr-1" />
+        <FontAwesomeIcon icon={faPaperPlane} className="mr-1 text-xl" />
         Send
       </button>
     </div>
