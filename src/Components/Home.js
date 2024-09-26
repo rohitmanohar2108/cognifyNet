@@ -17,40 +17,40 @@ const Home = () => {
       description: "Beautiful sunset at the beach! ".repeat(20),
     },
     {
-        id: 2,
-        image: "https://via.placeholder.com/400x600",
-        userImage: "https://via.placeholder.com/40",
-        username: "Jane Smith",
-        description: "Exploring the mountains! ".repeat(20),
-      },
-      {
-        id: 3,
-        image: "https://via.placeholder.com/400x600",
-        userImage: "https://via.placeholder.com/40",
-        username: "Alice Johnson",
-        description: "Enjoying a cup of coffee. ".repeat(20),
-      },
-      {
-        id: 4,
-        image: "https://via.placeholder.com/400x600",
-        userImage: "https://via.placeholder.com/40",
-        username: "Bob Brown",
-        description: "A day in the city. ".repeat(20),
-      },
-      {
-        id: 5,
-        image: "https://via.placeholder.com/400x600",
-        userImage: "https://via.placeholder.com/40",
-        username: "Charlie Green",
-        description: "Chasing waterfalls! ".repeat(20),
-      },
-      {
-        id: 6,
-        image: "https://via.placeholder.com/400x600",
-        userImage: "https://via.placeholder.com/40",
-        username: "David White",
-        description: "Night sky full of stars. ".repeat(20),
-      },
+      id: 2,
+      image: "https://via.placeholder.com/400x600",
+      userImage: "https://via.placeholder.com/40",
+      username: "Jane Smith",
+      description: "Exploring the mountains! ".repeat(20),
+    },
+    {
+      id: 3,
+      image: "https://via.placeholder.com/400x600",
+      userImage: "https://via.placeholder.com/40",
+      username: "Alice Johnson",
+      description: "Enjoying a cup of coffee. ".repeat(20),
+    },
+    {
+      id: 4,
+      image: "https://via.placeholder.com/400x600",
+      userImage: "https://via.placeholder.com/40",
+      username: "Bob Brown",
+      description: "A day in the city. ".repeat(20),
+    },
+    {
+      id: 5,
+      image: "https://via.placeholder.com/400x600",
+      userImage: "https://via.placeholder.com/40",
+      username: "Charlie Green",
+      description: "Chasing waterfalls! ".repeat(20),
+    },
+    {
+      id: 6,
+      image: "https://via.placeholder.com/400x600",
+      userImage: "https://via.placeholder.com/40",
+      username: "David White",
+      description: "Night sky full of stars. ".repeat(20),
+    },
   ];
 
   const [popup, setPopup] = useState({ visible: false, message: "" });
@@ -69,7 +69,7 @@ const Home = () => {
         {posts.map((post) => (
           <div
             key={post.id}
-            className="bg-white shadow-md rounded-lg overflow-hidden max-w-md mx-auto"
+            className="bg-white shadow-md rounded-lg overflow-hidden max-w-xl mx-auto" // Changed from max-w-md to max-w-xl
           >
             <UserInfo post={post} onButtonClick={handleButtonClick} />
             <TruncatedDescription description={post.description} />
@@ -102,7 +102,7 @@ const UserInfo = ({ post, onButtonClick }) => (
         <p className="text-gray-600 text-sm">Posted 1 hour ago</p>
       </div>
     </div>
-    <button className="text-blue-600 text-sm font-bold px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-500/15 transition duration-300">
+    <button onClick={() => onButtonClick("Followed")} className="text-blue-600 text-sm font-bold px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-500/15 transition duration-300">
       + Follow
     </button>
   </div>
@@ -110,7 +110,7 @@ const UserInfo = ({ post, onButtonClick }) => (
 
 const ActionButtons = ({ onButtonClick }) => (
   <div className="flex justify-between items-center p-3">
-    <div className="flex space-x-4">
+    <div className="flex space-x-9 ml-6">
       <button
         onClick={() => onButtonClick("Liked")}
         className="flex items-center text-zinc-600 rounded hover:text-black px-4 py-2 hover:bg-blue-500/15"
@@ -144,7 +144,7 @@ const ActionButtons = ({ onButtonClick }) => (
 );
 
 const Popup = ({ message }) => (
-  <div className="fixed top-16 left-1/2 transform -translate-x-1/2 text-white  bg-blue-500  p-2 rounded ">
+  <div className="fixed top-16 left-1/2 transform -translate-x-1/2 text-white bg-blue-500 p-2 rounded">
     {message}!
   </div>
 );
