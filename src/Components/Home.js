@@ -56,7 +56,8 @@ const Home = () => {
             <img
               src={post.image}
               alt="Post"
-              className="w-full h-[500px] object-cover"
+              className="w-full h-[400px] object-cover rounded-lg"
+              style={{ maxWidth: '90%', margin: '0 auto' }}
             />
             <div className="flex justify-between items-center p-4">
               <div className="flex space-x-8">
