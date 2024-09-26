@@ -12,31 +12,43 @@ const Home = () => {
     {
       id: 1,
       image: "https://via.placeholder.com/400x600",
+      userImage: "https://via.placeholder.com/40", // Placeholder for user image
+      username: "John Doe",
       description: "Beautiful sunset at the beach! ".repeat(20), // Simulating a long description
     },
     {
       id: 2,
       image: "https://via.placeholder.com/400x600",
+      userImage: "https://via.placeholder.com/40",
+      username: "Jane Smith",
       description: "Exploring the mountains! ".repeat(20),
     },
     {
       id: 3,
       image: "https://via.placeholder.com/400x600",
+      userImage: "https://via.placeholder.com/40",
+      username: "Alice Johnson",
       description: "Enjoying a cup of coffee. ".repeat(20),
     },
     {
       id: 4,
       image: "https://via.placeholder.com/400x600",
+      userImage: "https://via.placeholder.com/40",
+      username: "Bob Brown",
       description: "A day in the city. ".repeat(20),
     },
     {
       id: 5,
       image: "https://via.placeholder.com/400x600",
+      userImage: "https://via.placeholder.com/40",
+      username: "Charlie Green",
       description: "Chasing waterfalls! ".repeat(20),
     },
     {
       id: 6,
       image: "https://via.placeholder.com/400x600",
+      userImage: "https://via.placeholder.com/40",
+      username: "David White",
       description: "Night sky full of stars. ".repeat(20),
     },
   ];
@@ -44,7 +56,7 @@ const Home = () => {
   return (
     <div className="flex flex-col bg-gray-100 min-h-screen">
       <div
-        className="flex-grow p-4 space-y-4 max-w-screen-lg mx-auto overflow-y-auto"
+        className="flex-grow p-4 space-y-4 max-w-screen-lg mx-auto mt-1 overflow-y-auto"
         style={{ maxHeight: "calc(100vh - 64px)" }}
       >
         {posts.map((post) => (
@@ -52,7 +64,21 @@ const Home = () => {
             key={post.id}
             className="bg-white shadow-md rounded-lg overflow-hidden max-w-md mx-auto"
           >
+            {/* User info section */}
+            <div className="flex items-center p-4">
+              <img
+                src={post.userImage}
+                alt="User"
+                className="rounded-full w-10 h-10 object-cover mr-4"
+              />
+              <div>
+                <h2 className="text-gray-800 font-semibold">{post.username}</h2>
+                <p className="text-gray-600 text-sm">Posted 1 hour ago</p>
+              </div>
+            </div>
+
             <TruncatedDescription description={post.description} />
+
             <img
               src={post.image}
               alt="Post"
