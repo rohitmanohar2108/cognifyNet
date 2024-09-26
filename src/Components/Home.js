@@ -12,51 +12,58 @@ const Home = () => {
     {
       id: 1,
       image: "https://via.placeholder.com/400x600",
-      userImage: "https://via.placeholder.com/40", // Placeholder for user image
+      userImage: "https://via.placeholder.com/40",
       username: "John Doe",
-      description: "Beautiful sunset at the beach! ".repeat(20), // Simulating a long description
+      description: "Beautiful sunset at the beach! ".repeat(20),
     },
     {
-      id: 2,
-      image: "https://via.placeholder.com/400x600",
-      userImage: "https://via.placeholder.com/40",
-      username: "Jane Smith",
-      description: "Exploring the mountains! ".repeat(20),
-    },
-    {
-      id: 3,
-      image: "https://via.placeholder.com/400x600",
-      userImage: "https://via.placeholder.com/40",
-      username: "Alice Johnson",
-      description: "Enjoying a cup of coffee. ".repeat(20),
-    },
-    {
-      id: 4,
-      image: "https://via.placeholder.com/400x600",
-      userImage: "https://via.placeholder.com/40",
-      username: "Bob Brown",
-      description: "A day in the city. ".repeat(20),
-    },
-    {
-      id: 5,
-      image: "https://via.placeholder.com/400x600",
-      userImage: "https://via.placeholder.com/40",
-      username: "Charlie Green",
-      description: "Chasing waterfalls! ".repeat(20),
-    },
-    {
-      id: 6,
-      image: "https://via.placeholder.com/400x600",
-      userImage: "https://via.placeholder.com/40",
-      username: "David White",
-      description: "Night sky full of stars. ".repeat(20),
-    },
+        id: 2,
+        image: "https://via.placeholder.com/400x600",
+        userImage: "https://via.placeholder.com/40",
+        username: "Jane Smith",
+        description: "Exploring the mountains! ".repeat(20),
+      },
+      {
+        id: 3,
+        image: "https://via.placeholder.com/400x600",
+        userImage: "https://via.placeholder.com/40",
+        username: "Alice Johnson",
+        description: "Enjoying a cup of coffee. ".repeat(20),
+      },
+      {
+        id: 4,
+        image: "https://via.placeholder.com/400x600",
+        userImage: "https://via.placeholder.com/40",
+        username: "Bob Brown",
+        description: "A day in the city. ".repeat(20),
+      },
+      {
+        id: 5,
+        image: "https://via.placeholder.com/400x600",
+        userImage: "https://via.placeholder.com/40",
+        username: "Charlie Green",
+        description: "Chasing waterfalls! ".repeat(20),
+      },
+      {
+        id: 6,
+        image: "https://via.placeholder.com/400x600",
+        userImage: "https://via.placeholder.com/40",
+        username: "David White",
+        description: "Night sky full of stars. ".repeat(20),
+      },
   ];
+
+  const [popup, setPopup] = useState({ visible: false, message: "" });
+
+  const handleButtonClick = (action) => {
+    setPopup({ visible: true, message: action });
+    setTimeout(() => setPopup({ visible: false, message: "" }), 2000); // Auto-hide after 2 seconds
+  };
 
   return (
     <div className="flex flex-col bg-gray-100 min-h-screen">
       <div
-        className="flex-grow  space-y-4 max-w-screen-lg  mx-auto mt-1 overflow-y-auto"
+        className="flex-grow space-y-4 max-w-screen-lg mx-auto mt-1 overflow-y-auto mt-6"
         style={{ maxHeight: "calc(100vh - 64px)" }}
       >
         {posts.map((post) => (
@@ -64,65 +71,83 @@ const Home = () => {
             key={post.id}
             className="bg-white shadow-md rounded-lg overflow-hidden max-w-md mx-auto"
           >
-            {/* User info section */}
-            <div className="flex items-center p-4 justify-between">
-              <div className="flex items-center">
-                <img
-                  src={post.userImage}
-                  alt="User"
-                  className="rounded-full w-10 h-10 object-cover mr-4"
-                />
-                <div>
-                  <h2 className="text-gray-800 font-semibold">
-                    {post.username}
-                  </h2>
-                  <p className="text-gray-600 text-sm">
-                    CEO-CognifyWeb | CEO-filmNinja
-                  </p>
-                  <p className="text-gray-600 text-sm">Posted 1 hour ago</p>
-                </div>
-              </div>
-              {/* Follow Button */}
-              <button className="text-blue-600 text-sm font-bold px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-500/15 transition duration-300">
-                + Follow
-              </button>
-            </div>
-
+            <UserInfo post={post} onButtonClick={handleButtonClick} />
             <TruncatedDescription description={post.description} />
-
             <img
               src={post.image}
               alt="Post"
               className="w-full h-[400px] object-cover rounded-lg"
               style={{ maxWidth: "90%", margin: "0 auto" }}
             />
-            <div className="flex justify-between items-center p-3">
-              <div className="flex space-x-4 ">
-                <button className="flex items-center text-zinc-600 rounded hover:text-black px-4 py-2 hover:bg-blue-500/15 ">
-                  <FontAwesomeIcon icon={faThumbsUp} className="mr-1" />
-                  Like
-                </button>
-                <button className="flex items-center text-zinc-600 rounded hover:text-black px-4 py-2  hover:bg-blue-500/15">
-                  <FontAwesomeIcon icon={faComment} className="mr-1" />
-                  Comment
-                </button>
-                <button className="flex items-center text-zinc-600 rounded hover:text-black  px-3 py-2 hover:bg-blue-500/15">
-                  <FontAwesomeIcon icon={faShare} className="mr-1" />
-                  Repost
-                </button>
-
-                <button className="flex items-center text-zinc-600 rounded hover:text-black  px-3 py-2 hover:bg-blue-500/15">
-                  <FontAwesomeIcon icon={faPaperPlane} className="mr-1" />
-                  Send
-                </button>
-              </div>
-            </div>
+            <ActionButtons onButtonClick={handleButtonClick} />
           </div>
         ))}
+        {popup.visible && <Popup message={popup.message} />}
       </div>
     </div>
   );
 };
+
+const UserInfo = ({ post, onButtonClick }) => (
+  <div className="flex items-center p-4 justify-between">
+    <div className="flex items-center">
+      <img
+        src={post.userImage}
+        alt="User"
+        className="rounded-full w-10 h-10 object-cover mr-4"
+      />
+      <div>
+        <h2 className="text-gray-800 font-semibold">{post.username}</h2>
+        <p className="text-gray-600 text-sm">CEO-CognifyWeb | CEO-filmNinja</p>
+        <p className="text-gray-600 text-sm">Posted 1 hour ago</p>
+      </div>
+    </div>
+    <button className="text-blue-600 text-sm font-bold px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-500/15 transition duration-300">
+      + Follow
+    </button>
+  </div>
+);
+
+const ActionButtons = ({ onButtonClick }) => (
+  <div className="flex justify-between items-center p-3">
+    <div className="flex space-x-4">
+      <button
+        onClick={() => onButtonClick("Liked")}
+        className="flex items-center text-zinc-600 rounded hover:text-black px-4 py-2 hover:bg-blue-500/15"
+      >
+        <FontAwesomeIcon icon={faThumbsUp} className="mr-1" />
+        Like
+      </button>
+      <button
+        onClick={() => onButtonClick("Commented")}
+        className="flex items-center text-zinc-600 rounded hover:text-black px-4 py-2 hover:bg-blue-500/15"
+      >
+        <FontAwesomeIcon icon={faComment} className="mr-1" />
+        Comment
+      </button>
+      <button
+        onClick={() => onButtonClick("Reposted")}
+        className="flex items-center text-zinc-600 rounded hover:text-black px-3 py-2 hover:bg-blue-500/15"
+      >
+        <FontAwesomeIcon icon={faShare} className="mr-1" />
+        Repost
+      </button>
+      <button
+        onClick={() => onButtonClick("Sent")}
+        className="flex items-center text-zinc-600 rounded hover:text-black px-3 py-2 hover:bg-blue-500/15"
+      >
+        <FontAwesomeIcon icon={faPaperPlane} className="mr-1" />
+        Send
+      </button>
+    </div>
+  </div>
+);
+
+const Popup = ({ message }) => (
+  <div className="fixed top-16 left-1/2 transform -translate-x-1/2 text-white  bg-blue-500  p-2 rounded ">
+    {message}!
+  </div>
+);
 
 const TruncatedDescription = ({ description }) => {
   const [isExpanded, setIsExpanded] = useState(false);
