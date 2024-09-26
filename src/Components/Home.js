@@ -96,25 +96,26 @@ const Home = () => {
               className="w-full h-[400px] object-cover rounded-lg"
               style={{ maxWidth: "90%", margin: "0 auto" }}
             />
-            <div className="flex justify-between items-center p-4">
-              <div className="flex space-x-8">
-                <button className="flex items-center text-zinc-600 hover:text-black">
+            <div className="flex justify-between items-center p-3">
+              <div className="flex space-x-4 ">
+                <button className="flex items-center text-zinc-600 rounded hover:text-black px-4 py-2 hover:bg-blue-500/15 ">
                   <FontAwesomeIcon icon={faThumbsUp} className="mr-1" />
                   Like
                 </button>
-                <button className="flex items-center text-zinc-600 hover:text-black">
+                <button className="flex items-center text-zinc-600 rounded hover:text-black px-4 py-2  hover:bg-blue-500/15">
                   <FontAwesomeIcon icon={faComment} className="mr-1" />
                   Comment
                 </button>
-                <button className="flex items-center text-zinc-600 hover:text-black">
+                <button className="flex items-center text-zinc-600 rounded hover:text-black  px-3 py-2 hover:bg-blue-500/15">
                   <FontAwesomeIcon icon={faShare} className="mr-1" />
                   Repost
                 </button>
+
+                <button className="flex items-center text-zinc-600 rounded hover:text-black  px-3 py-2 hover:bg-blue-500/15">
+                  <FontAwesomeIcon icon={faPaperPlane} className="mr-1" />
+                  Send
+                </button>
               </div>
-              <button className="flex items-center text-zinc-600 hover:text-black">
-                <FontAwesomeIcon icon={faPaperPlane} className="mr-1" />
-                Send
-              </button>
             </div>
           </div>
         ))}
