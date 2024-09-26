@@ -64,7 +64,7 @@ const Home = () => {
   return (
     <div className="flex flex-col bg-gray-100 min-h-screen">
       <div
-        className="flex-grow space-y-4 max-w-screen-lg mx-auto mt-1 overflow-y-auto mt-6"
+        className="flex-grow space-y-4 max-w-screen-lg mx-auto mt-5 overflow-y-auto "
         style={{ maxHeight: "calc(100vh - 64px)" }}
       >
         {posts.map((post) => (
@@ -80,6 +80,7 @@ const Home = () => {
               className="w-full h-[400px] object-cover rounded-lg"
               style={{ maxWidth: "90%", margin: "0 auto" }}
             />
+            <hr className="border-gray-300 mt-5 mx-auto w-[90%]" /> 
             <ActionButtons onButtonClick={handleButtonClick} />
           </div>
         ))}
@@ -104,7 +105,7 @@ const UserInfo = ({ post, onButtonClick }) => (
       </div>
     </div>
     <button
-      onClick={() => onButtonClick("Followed")}
+      onClick={() => onButtonClick("✨ Followed")}
       className="text-blue-600 text-sm font-bold px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-500/15 transition duration-300"
     >
       + Follow
@@ -116,28 +117,28 @@ const ActionButtons = ({ onButtonClick }) => (
   <div className="flex justify-between items-center p-3">
     <div className="flex space-x-3 ml-4">
       <button
-        onClick={() => onButtonClick("Liked")}
+        onClick={() => onButtonClick("👍🏻 Liked")}
         className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
       >
         <FontAwesomeIcon icon={faThumbsUp} className="mr-1 text-xl " />
         Like
       </button>
       <button
-        onClick={() => onButtonClick("Commented")}
+        onClick={() => onButtonClick("💬 Commented")}
         className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
       >
         <FontAwesomeIcon icon={faComment} className="mr-1 text-xl" />
         Comment
       </button>
       <button
-        onClick={() => onButtonClick("Reposted")}
+        onClick={() => onButtonClick("🔁 Reposted")}
         className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
       >
         <FontAwesomeIcon icon={faShare} className="mr-1 text-xl" />
         Repost
       </button>
       <button
-        onClick={() => onButtonClick("Sent")}
+        onClick={() => onButtonClick("➤ Sent")}
         className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
       >
         <FontAwesomeIcon icon={faPaperPlane} className="mr-1 text-xl" />
@@ -148,7 +149,7 @@ const ActionButtons = ({ onButtonClick }) => (
 );
 
 const Popup = ({ message }) => (
-  <div className="fixed top-16 left-1/2 transform -translate-x-1/2 text-white bg-blue-500 p-2 rounded">
+  <div className="fixed top-16 left-1/2 transform -translate-x-1/2 text-white bg-rose-600 p-2 py-2 rounded-lg ">
     {message}!
   </div>
 );
