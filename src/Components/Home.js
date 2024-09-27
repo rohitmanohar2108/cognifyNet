@@ -62,7 +62,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col bg-gray-100 min-h-screen">
+    <div className="flex flex-col bg-amber-50 min-h-screen">
       <div
         className="flex-grow space-y-4 max-w-screen-lg mx-auto mt-5 overflow-y-auto "
         style={{ maxHeight: "calc(100vh - 64px)" }}
