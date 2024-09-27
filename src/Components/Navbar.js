@@ -11,9 +11,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md py-1">
+    <nav className="bg-black fixed top-0 w-full  z-50 py-1">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-3xl font-bold bg-gradient-to-r from-black to-zinc-600 bg-clip-text text-transparent tracking-wider text-center">CognifyNet</h1>
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-white bg-clip-text text-transparent tracking-wider text-center">CognifyNet</h1>
         <ul className="flex space-x-8 relative">
           {[
             { to: "/", icon: faHome, label: "Home" },
@@ -29,13 +29,13 @@ const Navbar = () => {
               <Link to={to} onClick={() => handleItemClick(label.toLowerCase().replace(" ", "-"))} className="flex flex-col items-center">
                 <FontAwesomeIcon
                   icon={icon}
-                  className={`text-xl mb-1 ${activeItem === label.toLowerCase().replace(" ", "-") ? 'text-black ' : 'text-zinc-600 hover:text-black'}`}
+                  className={`text-xl mb-1 ${activeItem === label.toLowerCase().replace(" ", "-") ? 'text-white ' : 'text-white hover:text-gray-400'}`}
                 />
-                <span className={`text-sm ${activeItem === label.toLowerCase().replace(" ", "-") ? 'text-black' : 'text-zinc-600 hover:text-black'}`}>
+                <span className={`text-sm ${activeItem === label.toLowerCase().replace(" ", "-") ? 'text-white' : 'text-white hover:text-gray-400'}`}>
                   {label}
                 </span>
               </Link>
-              {activeItem === label.toLowerCase().replace(" ", "-") && <div className="h-1 bg-black w-full mt rounded-full"></div>}
+              {activeItem === label.toLowerCase().replace(" ", "-") && <div className="border bg-white w-full mt rounded-full"></div>}
             </li>
           ))}
         </ul>

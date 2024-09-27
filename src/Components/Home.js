@@ -11,23 +11,23 @@ const Home = () => {
   const posts = [
     {
       id: 1,
-      image: "https://via.placeholder.com/400x600",
-      userImage: "https://via.placeholder.com/40",
+      image: "https://img.freepik.com/premium-photo/palm-tree-is-beach-sun-is-setting_853115-11588.jpg",
+      userImage: "https://media.licdn.com/dms/image/v2/D5635AQHdDi6OfTqrwg/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1725916584949?e=1727974800&v=beta&t=jBPq0oraBPcQWwtrMHxfzqBJLXZ5nYXX9y-LKjamJ-E",
       userbio: "react dev",
       username: "John Doe",
       description: "Beautiful sunset at the beach! ".repeat(20),
     },
     {
       id: 2,
-      image: "https://via.placeholder.com/400x600",
-      userImage: "https://via.placeholder.com/40",
+      image: "https://pics.craiyon.com/2023-09-26/aa2fbe35ce18489980f73a4acb336537.webp",
+      userImage: "https://media.licdn.com/dms/image/v2/D4E03AQFTeCTuT4gt6A/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1695558754264?e=1732752000&v=beta&t=yQhkrXMy-jbyRjVeQiXdDv6j3GguvFNY39mztejmeyc",
       username: "Jane Smith",
       description: "Exploring the mountains! ".repeat(20),
     },
     {
       id: 3,
-      image: "https://via.placeholder.com/400x600",
-      userImage: "https://via.placeholder.com/40",
+      image: "https://media.istockphoto.com/id/1326417843/photo/cheerful-woman-enjoying-coffee-cup-in-a-winter-afternoon.jpg?s=170667a&w=0&k=20&c=AvzROWUYb30JX7Wv2hQFbs1S4uN4OQCbSuv2Y7MRgP0=",
+      userImage: "https://media.licdn.com/dms/image/v2/D5603AQHXju6l4DEuBg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1718389878605?e=1732752000&v=beta&t=Ejr66zQHc_v2_I80YYoiu-3fWIUrdC3GgD3vOMVmAwQ",
       username: "Alice Johnson",
       description: "Enjoying a cup of coffee. ".repeat(20),
     },
@@ -62,15 +62,15 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col bg-amber-50 min-h-screen">
+    <div className="flex flex-col bg-black min-h-screen bg-gradient-to-b from-gray-900 fixed top-0 w-full">
       <div
-        className="flex-grow space-y-4 max-w-screen-lg mx-auto mt-5 overflow-y-auto "
+        className="flex-grow space-y-4 max-w-screen-lg mx-auto mt-16 overflow-y-auto "
         style={{ maxHeight: "calc(100vh - 64px)" }}
       >
         {posts.map((post) => (
           <div
             key={post.id}
-            className="bg-white shadow-md rounded-lg overflow-hidden max-w-xl mx-auto" // Changed from max-w-md to max-w-xl
+            className="bg-black/90 shadow-md rounded-lg overflow-hidden max-w-xl mx-auto" // Changed from max-w-md to max-w-xl
           >
             <UserInfo post={post} onButtonClick={handleButtonClick} />
             <TruncatedDescription description={post.description} />
@@ -96,17 +96,17 @@ const UserInfo = ({ post, onButtonClick }) => (
       <img
         src={post.userImage}
         alt="User"
-        className="rounded-full w-10 h-10 object-cover mr-4"
+        className="rounded-full w-12 h-12 object-cover mr-4"
       />
       <div>
-        <h2 className="text-gray-800 font-semibold">{post.username}</h2>
-        <p className="text-gray-600 text-sm">{post.userbio}</p>
-        <p className="text-gray-600 text-sm">Posted 1 hour ago</p>
+        <h2 className="text-white font-semibold">{post.username}</h2>
+        <p className="text-gray-300 text-sm">{post.userbio}</p>
+        <p className="text-gray-300 text-sm">Posted 1 hour ago</p>
       </div>
     </div>
     <button
       onClick={() => onButtonClick("✨ Followed")}
-      className="text-blue-600 text-sm font-bold px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-500/15 transition duration-300"
+      className="text-blue-500  bg-blue-500/15 text-sm font-bold px-4 py-2 rounded-lg hover:text-blue-400  hover:bg-blue-600/50 transition duration-300"
     >
       + Follow
     </button>
@@ -118,28 +118,28 @@ const ActionButtons = ({ onButtonClick }) => (
     <div className="flex space-x-3 ml-4">
       <button
         onClick={() => onButtonClick("👍🏻 Liked")}
-        className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
+        className="flex items-center text-white bg-blue-500/15 rounded-lg px-6 py-2 hover:bg-blue-600/50 font-semibold"
       >
         <FontAwesomeIcon icon={faThumbsUp} className="mr-1 text-base " />
         Like
       </button>
       <button
         onClick={() => onButtonClick("💬 Commented")}
-        className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
+        className="flex items-center text-white bg-blue-500/15 rounded px-6 py-2 hover:bg-blue-600/50 font-semibold"
       >
         <FontAwesomeIcon icon={faComment} className="mr-1 text-base" />
         Comment
       </button>
       <button
         onClick={() => onButtonClick("🔁 Reposted")}
-        className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
+        className="flex items-center text-white bg-blue-500/15 rounded  px-6 py-2 hover:bg-blue-600/50 font-semibold"
       >
         <FontAwesomeIcon icon={faShare} className="mr-1 text-base" />
         Repost
       </button>
       <button
         onClick={() => onButtonClick("➤ Sent")}
-        className="flex items-center text-zinc-600 rounded hover:text-black px-6 py-2 hover:bg-blue-500/15 font-semibold"
+        className="flex items-center text-white bg-blue-500/15 rounded  px-6 py-2 hover:bg-blue-600/50 font-semibold"
       >
         <FontAwesomeIcon icon={faPaperPlane} className="mr-1 text-base" />
         Send
@@ -149,7 +149,7 @@ const ActionButtons = ({ onButtonClick }) => (
 );
 
 const Popup = ({ message }) => (
-  <div className="fixed top-16 left-1/2 transform -translate-x-1/2 text-white bg-rose-600 p-2 py-2 rounded-lg ">
+  <div className="fixed top-16 left-1/2 transform -translate-x-1/2 text-white bg-blue-600 p-2 py-2 rounded-lg ">
     {message}!
   </div>
 );
@@ -165,7 +165,7 @@ const TruncatedDescription = ({ description }) => {
   return (
     <div className="p-4">
       <p
-        className="text-gray-800 transition-all duration-300"
+        className="text-white transition-all duration-300"
         style={{
           maxHeight: isExpanded ? "1000px" : "50px",
           overflow: "hidden",

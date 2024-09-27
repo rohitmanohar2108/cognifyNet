@@ -14,6 +14,7 @@ const App = () => {
   return (
     <Router>
       <Navbar />
+      <div className='pt-10'></div>
       <Routes> {/* Use Routes instead of Switch */}
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
