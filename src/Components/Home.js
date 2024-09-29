@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CameraIcon, CalendarIcon, DocumentIcon } from '@heroicons/react/outline';
+import {
+  CameraIcon,
+  CalendarIcon,
+  DocumentIcon,
+} from "@heroicons/react/outline";
 import {
   faThumbsUp,
   faComment,
@@ -98,45 +102,142 @@ const Home = () => {
       className="flex flex-col min-h-screen"
       style={{ backgroundColor: "#F3F2EF" }}
     >
-      {/* New Empty Section */}
-      <div className="max-w-[580px] w-full mt-8 mx-auto bg-white border border-gray-300 rounded-xl flex flex-col p-4">
-      {post ? (
-        <>
-          <div className="flex items-center">
-            <img
-              src={post.userImage} // Access userImage from post
-              alt="User"
-              className="rounded-full h-[50px] w-[50px] object-cover" // Set fixed size for the image
-            />
-            <input
-              type="text"
-              placeholder="Start a post, Try writing with AI"
-              className="ml-4 border border-black rounded-full p-3 flex-grow focus:outline-none placeholder-black cursor-pointer bg-gray-100" // Styling for the search bar
-            />
-          </div>
-          {/* Buttons below the search bar */}
-          <div className="flex  space-x-20 justify-center mt-4">
-            <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-              <CameraIcon className="h-5 w-5 mr-1 text-blue-500" /> {/* Media icon */}
-              Media
-            </button>
-            <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-              <CalendarIcon className="h-5 w-5 mr-1 text-red-500" /> {/* Events icon */}
-              Events
-            </button>
-            <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-              <DocumentIcon className="h-5 w-5 mr-1 text-red-700" /> {/* Article icon */}
-              Article
-            </button>
-          </div>
-        </>
-      ) : (
-        <p>Loading...</p> // You can replace this with a loading spinner or placeholder
-      )}
-    </div>
+      {/* Flex container for left and right components */}
+      <div className="flex flex-row flex-grow justify-between items-start mt-10">
+        {/* Left Component */}
+        <div
+          className="flex-1 max-w-xs bg-white border border-gray-300 rounded-xl p-4 m-4 ml-20"
+          style={{ height: "400px" }}
+        >
+          <h2 className="text-xl font-bold">Left Component</h2>
+          {/* Add your content here */}
+        </div>
+
+        {/* Center Component - Search Bar Section */}
+        <div className="max-w-[580px] w-full mx-auto bg-white border border-gray-300 rounded-xl flex flex-col p-4 mt-5">
+          {post ? (
+            <>
+              <div className="flex items-center">
+                <img
+                  src={post.userImage}
+                  alt="User"
+                  className="rounded-full h-[50px] w-[50px] object-cover"
+                />
+                <input
+                  type="text"
+                  placeholder="Start a post, Try writing with AI"
+                  className="ml-4 border border-black rounded-full p-3 flex-grow focus:outline-none placeholder-black cursor-pointer bg-gray-100"
+                />
+              </div>
+              {/* Buttons below the search bar */}
+              <div className="flex space-x-4 justify-center mt-4">
+                <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                  <CameraIcon className="h-5 w-5 mr-1 text-blue-500" />
+                  Media
+                </button>
+                <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                  <CalendarIcon className="h-5 w-5 mr-1 text-red-500" />
+                  Events
+                </button>
+                <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                  <DocumentIcon className="h-5 w-5 mr-1 text-red-700" />
+                  Article
+                </button>
+              </div>
+              <div>
+                <div className="flex space-x-4 justify-center mt-4">
+                  <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                    <CameraIcon className="h-5 w-5 mr-1 text-blue-500" />
+                    Media
+                  </button>
+                  <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                    <CalendarIcon className="h-5 w-5 mr-1 text-red-500" />
+                    Events
+                  </button>
+                  <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                    <DocumentIcon className="h-5 w-5 mr-1 text-red-700" />
+                    Article
+                  </button>
+                  <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                    <DocumentIcon className="h-5 w-5 mr-1 text-red-700" />
+                    Article
+                  </button>
+                </div>
+                <div>
+                  <div className="flex space-x-4 justify-center mt-4">
+                    <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                      <CameraIcon className="h-5 w-5 mr-1 text-blue-500" />
+                      Media
+                    </button>
+                    <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                      <CalendarIcon className="h-5 w-5 mr-1 text-red-500" />
+                      Events
+                    </button>
+                    <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                      <DocumentIcon className="h-5 w-5 mr-1 text-red-700" />
+                      Article
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex space-x-4 justify-center mt-4">
+                    <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                      <CameraIcon className="h-5 w-5 mr-1 text-blue-500" />
+                      Media
+                    </button>
+                    <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                      <CalendarIcon className="h-5 w-5 mr-1 text-red-500" />
+                      Events
+                    </button>
+                    <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                      <DocumentIcon className="h-5 w-5 mr-1 text-red-700" />
+                      Article
+                    </button>
+                    <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                      <DocumentIcon className="h-5 w-5 mr-1 text-red-700" />
+                      Article
+                    </button>
+                  </div>
+                  <div>
+                    <div className="flex space-x-4 justify-center mt-4">
+                      <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                        <CameraIcon className="h-5 w-5 mr-1 text-blue-500" />
+                        Media
+                      </button>
+                      <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                        <CalendarIcon className="h-5 w-5 mr-1 text-red-500" />
+                        Events
+                      </button>
+                      <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+                        <DocumentIcon className="h-5 w-5 mr-1 text-red-700" />
+                        Article
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
+
+        {/* Right Component */}
+        <div
+          className="flex-1 max-w-xs bg-white border border-gray-300 rounded-xl p-4 m-4 mr-20"
+          style={{ height: "400px" }}
+        >
+          <h2 className="text-xl font-bold">Right Component</h2>
+          {/* Add your content here */}
+        </div>
+      </div>
+
+      {/* Video Section - Horizontal Scroll */}
       <hr className="border-gray-400 mt-5 mx-auto w-[39%]" />
+
+      {/* Posts Section */}
       <div
-        className="flex-grow space-y-4 max-w-screen-lg mx-auto mt-4 overflow-y-auto" // Keep existing styles
+        className="flex-grow space-y-4 max-w-screen-lg mx-auto mt-4 overflow-y-auto"
         style={{ maxHeight: "calc(100vh - 64px)" }}
       >
         {posts.map((post) => (
@@ -149,9 +250,9 @@ const Home = () => {
             <img
               src={post.image}
               alt="Post"
-              className="w-full h-[400px] object-cover  cursor-pointer"
+              className="w-full h-[400px] object-cover cursor-pointer"
               style={{ maxWidth: "100%", margin: "0 auto" }}
-              onClick={() => handleImageClick(post)} // Open modal on image click
+              onClick={() => handleImageClick(post)}
             />
             <hr className="border-gray-300 mt-5 mx-auto w-[90%]" />
             <ActionButtons onButtonClick={handleButtonClick} />
