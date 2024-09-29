@@ -361,7 +361,7 @@ const TruncatedDescription = ({ description }) => {
 // Modal Component
 const Modal = ({ post, onClose }) => (
   <div className="fixed inset-0 bg-black/70 z-50 flex justify-center items-center">
-    <div className="bg-gray-800 rounded-lg max-w-5xl w-full h-[80vh] flex overflow-hidden relative">
+    <div className="bg-white rounded-lg max-w-5xl w-full h-[80vh] flex overflow-hidden relative">
       {/* Image on the left with increased width */}
       <div className="w-3/5 h-full">
         <img
@@ -381,29 +381,28 @@ const Modal = ({ post, onClose }) => (
               className="rounded-full w-12 h-12 object-cover mr-4"
             />
             <div>
-              <h2 className="text-2xl font-bold text-white">{post.username}</h2>
-              <p className="text-gray-300">{post.userbio}</p>
+              <h2 className="text-2xl font-bold text-black">{post.username}</h2>
+              <p className="text-gray-600">{post.userbio}</p>
               <p className="text-gray-400 text-sm">Posted 1 hour ago</p>
             </div>
           </div>
           <button
             onClick={() => onClose()}
-            className="text-blue-500 bg-blue-500/15 px-4 py-2 rounded-lg text-sm font-semibold hover:text-blue-400 hover:bg-blue-600/50"
+            className="text-blue-500  px-4 py-2 rounded-lg text-sm font-semibold  hover:bg-blue-200/50"
           >
             + Follow
           </button>
         </div>
 
         {/* Description */}
-        <p className="text-white mb-4">{post.description}</p>
+        <p className="text-black mb-20">{post.description}</p>
 
         {/* Action buttons */}
-        <ActionButtons onButtonClick={() => console.log("Button clicked!")} />
 
         {/* Cross button outside modal */}
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-white text-lg hover:bg-blue-500/50 h-8 w-8 rounded-full flex items-center justify-center transition-transform duration-200 ease-in-out  hover:scale-105"
+          className="absolute top-2 right-2 text-black text-lg hover:bg-blue-500/50 h-8 w-8 rounded-full flex items-center justify-center transition-transform duration-200 ease-in-out  hover:scale-105"
           style={{ transform: "translate(10%, -10%)" }} // Move button up and right
         >
           <FontAwesomeIcon icon={faTimes} />
