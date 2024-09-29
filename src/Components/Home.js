@@ -97,18 +97,25 @@ const Home = () => {
       style={{ backgroundColor: "#F3F2EF" }}
     >
       {/* New Empty Section */}
-      <div className="max-w-[580px] w-full mt-8 h-32 mx-auto bg-white border border-gray-300 rounded-xl ">
-        {post ? (
+      <div className="max-w-[580px] w-full mt-8 mx-auto bg-white border border-gray-300 rounded-xl flex items-center p-4">
+      {post ? (
+        <>
           <img
             src={post.userImage} // Access userImage from post
             alt="User"
-            className="rounded-full mt-3 ml-4"
-            style={{ maxHeight: "40%", objectFit: "cover" }} // Maintain aspect ratio
+            className="rounded-full  ml h-[50px] w-[50px] object-cover" // Set fixed size for the image
           />
-        ) : (
-          <p>Loading...</p> // You can replace this with a loading spinner or placeholder
-        )}
-      </div>
+          <input
+            type="text"
+            placeholder="Start a post, Try writing with AI"
+            className="ml-4 border border-black rounded-full p-2 flex-grow focus:outline-none placeholder-black cursor-pointer" // Styling for the search bar
+            
+          />
+        </>
+      ) : (
+        <p>Loading...</p> // You can replace this with a loading spinner or placeholder
+      )}
+    </div>
       <hr className="border-gray-400 mt-5 mx-auto w-[39%]" />
       <div
         className="flex-grow space-y-4 max-w-screen-lg mx-auto mt-4 overflow-y-auto" // Keep existing styles
