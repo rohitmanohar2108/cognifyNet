@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CameraIcon, CalendarIcon, DocumentIcon } from '@heroicons/react/outline';
 import {
   faThumbsUp,
   faComment,
@@ -83,7 +84,8 @@ const Home = () => {
     const fetchPostData = async () => {
       // Replace this with your actual data fetching logic
       const fetchedPost = {
-        userImage: "https://media.licdn.com/dms/image/v2/D5635AQHdDi6OfTqrwg/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1725916584949?e=1727974800&v=beta&t=jBPq0oraBPcQWwtrMHxfzqBJLXZ5nYXX9y-LKjamJ-E", // Replace with actual image URL
+        userImage:
+          "https://media.licdn.com/dms/image/v2/D5635AQHdDi6OfTqrwg/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1725916584949?e=1727974800&v=beta&t=jBPq0oraBPcQWwtrMHxfzqBJLXZ5nYXX9y-LKjamJ-E", // Replace with actual image URL
         // other post properties...
       };
       setPost(fetchedPost);
@@ -97,20 +99,36 @@ const Home = () => {
       style={{ backgroundColor: "#F3F2EF" }}
     >
       {/* New Empty Section */}
-      <div className="max-w-[580px] w-full mt-8 mx-auto bg-white border border-gray-300 rounded-xl flex items-center p-4">
+      <div className="max-w-[580px] w-full mt-8 mx-auto bg-white border border-gray-300 rounded-xl flex flex-col p-4">
       {post ? (
         <>
-          <img
-            src={post.userImage} // Access userImage from post
-            alt="User"
-            className="rounded-full  ml h-[50px] w-[50px] object-cover" // Set fixed size for the image
-          />
-          <input
-            type="text"
-            placeholder="Start a post, Try writing with AI"
-            className="ml-4 border border-black rounded-full p-2 flex-grow focus:outline-none placeholder-black cursor-pointer" // Styling for the search bar
-            
-          />
+          <div className="flex items-center">
+            <img
+              src={post.userImage} // Access userImage from post
+              alt="User"
+              className="rounded-full h-[50px] w-[50px] object-cover" // Set fixed size for the image
+            />
+            <input
+              type="text"
+              placeholder="Start a post, Try writing with AI"
+              className="ml-4 border border-black rounded-full p-3 flex-grow focus:outline-none placeholder-black cursor-pointer bg-gray-100" // Styling for the search bar
+            />
+          </div>
+          {/* Buttons below the search bar */}
+          <div className="flex  space-x-20 justify-center mt-4">
+            <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+              <CameraIcon className="h-5 w-5 mr-1 text-blue-500" /> {/* Media icon */}
+              Media
+            </button>
+            <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+              <CalendarIcon className="h-5 w-5 mr-1 text-red-500" /> {/* Events icon */}
+              Events
+            </button>
+            <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
+              <DocumentIcon className="h-5 w-5 mr-1 text-red-700" /> {/* Article icon */}
+              Article
+            </button>
+          </div>
         </>
       ) : (
         <p>Loading...</p> // You can replace this with a loading spinner or placeholder
