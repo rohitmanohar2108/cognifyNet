@@ -31,7 +31,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex flex-col items-center">
         <h1
-          className={`text-3xl font-bold bg-gradient-to-r from-black to-black bg-clip-text text-transparent tracking-wider mb-6 cursor-pointer  ${
+          className={`text-3xl font-bold bg-gradient-to-r from-black to-black bg-clip-text text-transparent tracking-wider mb-6 cursor-pointer ${
             isHomeSection ? "" : "hidden"
           }`}
         >
@@ -50,7 +50,7 @@ const Navbar = () => {
             N
           </span>
         </h1>
-        <ul className="flex flex-col space-y-4 w-full mt-5 ">
+        <ul className="flex flex-col space-y-4 w-full mt-5">
           {[
             { to: "/", icon: faHome, label: "Home" },
             { to: "/dashboard", icon: faTachometerAlt, label: "Dashboard" },
@@ -76,10 +76,10 @@ const Navbar = () => {
           ].map(({ to, icon, label, image }) => (
             <li
               key={label}
-              className={`flex items-center cursor-pointer rounded py-3 mx-4 transition duration-300 ease-in-out ${
+              className={`flex items-center cursor-pointer rounded-lg py-1 mx-4 transition duration-300 ease-in-out ${
                 activeItem === label.toLowerCase().replace(" ", "-")
-                  ? "font-semibold hover:bg-gray-200 text-black border border-gray-300 rounded-md"
-                  : "hover:bg-gray-200 hover:text-black "
+                  ? "font-semibold hover:bg-gray-200 text-black border border-gray-300 rounded-lg"
+                  : "hover:bg-gray-200 hover:text-black"
               }`}
             >
               <Link
@@ -87,7 +87,7 @@ const Navbar = () => {
                 onClick={() =>
                   handleItemClick(label.toLowerCase().replace(" ", "-"))
                 }
-                className="flex items-center w-full ml-3"
+                className="flex items-center w-full ml-3 h-12" // Consistent height
               >
                 {icon && (
                   <FontAwesomeIcon icon={icon} className="text-2xl mr-4" />
@@ -96,7 +96,7 @@ const Navbar = () => {
                   <img
                     src={image}
                     alt="Profile"
-                    className="rounded-full border-2 border-blue-600 h-10 w-10 mr-3 -mx-[5px]"
+                    className="rounded-full border-2 border-blue-600 h-10 w-10 mr-3"
                   />
                 ) : null}
                 <span className={`text-base ${isHomeSection ? "" : "hidden"}`}>
