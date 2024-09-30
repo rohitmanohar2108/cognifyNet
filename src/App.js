@@ -14,17 +14,18 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      <div className='pt-10'></div>
-      <Routes> {/* Use Routes instead of Switch */}
-        <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/freelance-jobs" element={<FreelanceBoard />} />
-        <Route path="/communities" element={<Communities />} />
-        <Route path="/mentorship" element={<Mentorship />} />
-        <Route path="/wellness" element={<Wellness />} />
-        <Route path="/networking" element={<Networking />} />
-        <Route path="/profile" element={<Profile />} /> {/* Add the Profile route */}
-      </Routes>
+      <div className="ml-64 pt-10"> {/* Add margin left to accommodate the sidebar */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/freelance-jobs" element={<FreelanceBoard />} />
+          <Route path="/communities" element={<Communities />} />
+          <Route path="/mentorship" element={<Mentorship />} />
+          <Route path="/wellness" element={<Wellness />} />
+          <Route path="/networking" element={<Networking />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </div>
     </Router>
   );
 };

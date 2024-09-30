@@ -99,22 +99,15 @@ const Home = () => {
   }, []);
   return (
     <div
-      className="flex flex-col min-h-screen"
-      style={{ backgroundColor: "#F3F2EF" }}
+      className="flex flex-col  min-h-screen"
+      style={{ backgroundColor: "#FFFFFF" }}
     >
       {/* Flex container for left and right components */}
       <div className="flex flex-row flex-grow justify-between items-start mt-10">
         {/* Left Component */}
-        <div
-          className="flex-1 max-w-xs bg-white border border-gray-300 rounded-xl p-4 m-4 ml-20"
-          style={{ height: "400px" }}
-        >
-          <h2 className="text-xl font-bold">Left Component</h2>
-          {/* Add your content here */}
-        </div>
 
         {/* Center Component - Search Bar Section */}
-        <div className="max-w-[580px] w-full mx-auto bg-white border border-gray-300 rounded-xl flex flex-col p-4 mt-5">
+        <div className="max-w-[580px] w-full  mx-[210px] bg-white border border-gray-300 rounded-xl flex flex-col p-4 ">
           {post ? (
             <>
               <div className="flex items-center">
@@ -144,78 +137,6 @@ const Home = () => {
                   Article
                 </button>
               </div>
-              <div>
-                <div className="flex space-x-4 justify-center mt-4">
-                  <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-                    <CameraIcon className="h-5 w-5 mr-1 text-blue-500" />
-                    Media
-                  </button>
-                  <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-                    <CalendarIcon className="h-5 w-5 mr-1 text-red-500" />
-                    Events
-                  </button>
-                  <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-                    <DocumentIcon className="h-5 w-5 mr-1 text-red-700" />
-                    Article
-                  </button>
-                  <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-                    <DocumentIcon className="h-5 w-5 mr-1 text-red-700" />
-                    Article
-                  </button>
-                </div>
-                <div>
-                  <div className="flex space-x-4 justify-center mt-4">
-                    <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-                      <CameraIcon className="h-5 w-5 mr-1 text-blue-500" />
-                      Media
-                    </button>
-                    <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-                      <CalendarIcon className="h-5 w-5 mr-1 text-red-500" />
-                      Events
-                    </button>
-                    <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-                      <DocumentIcon className="h-5 w-5 mr-1 text-red-700" />
-                      Article
-                    </button>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex space-x-4 justify-center mt-4">
-                    <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-                      <CameraIcon className="h-5 w-5 mr-1 text-blue-500" />
-                      Media
-                    </button>
-                    <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-                      <CalendarIcon className="h-5 w-5 mr-1 text-red-500" />
-                      Events
-                    </button>
-                    <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-                      <DocumentIcon className="h-5 w-5 mr-1 text-red-700" />
-                      Article
-                    </button>
-                    <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-                      <DocumentIcon className="h-5 w-5 mr-1 text-red-700" />
-                      Article
-                    </button>
-                  </div>
-                  <div>
-                    <div className="flex space-x-4 justify-center mt-4">
-                      <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-                        <CameraIcon className="h-5 w-5 mr-1 text-blue-500" />
-                        Media
-                      </button>
-                      <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-                        <CalendarIcon className="h-5 w-5 mr-1 text-red-500" />
-                        Events
-                      </button>
-                      <button className="flex items-center border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-100">
-                        <DocumentIcon className="h-5 w-5 mr-1 text-red-700" />
-                        Article
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </>
           ) : (
             <p>Loading...</p>
@@ -223,21 +144,14 @@ const Home = () => {
         </div>
 
         {/* Right Component */}
-        <div
-          className="flex-1 max-w-xs bg-white border border-gray-300 rounded-xl p-4 m-4 mr-20"
-          style={{ height: "400px" }}
-        >
-          <h2 className="text-xl font-bold">Right Component</h2>
-          {/* Add your content here */}
-        </div>
       </div>
 
       {/* Video Section - Horizontal Scroll */}
-      <hr className="border-gray-400 mt-5 mx-auto w-[39%]" />
+      <hr className="border-gray-400 mt-5 mx-[260px] w-[39%]" />
 
       {/* Posts Section */}
       <div
-        className="flex-grow space-y-4 max-w-screen-lg mx-auto mt-4 overflow-y-auto"
+        className="flex-grow space-y-4 max-w-screen-lg mx-auto  mt-4 overflow-y-auto -mx-3"
         style={{ maxHeight: "calc(100vh - 64px)" }}
       >
         {posts.map((post) => (
