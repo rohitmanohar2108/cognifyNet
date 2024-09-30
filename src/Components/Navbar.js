@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" fixed top-0 left-0 h-full w-64 z-50 py-6 shadow-lg" style={{ backgroundColor: "#F3F2EF" }}>
+    <nav className=" fixed top-0 left-0 h-full w-64 z-50 py-6 shadow-lg" style={{ backgroundColor: "#FFFFFF" }}>
       <div className="container mx-auto flex flex-col items-center">
         <h1 className="text-3xl font-bold bg-gradient-to-r from-black to-black bg-clip-text text-transparent tracking-wider mb-6">
           CognifyNet

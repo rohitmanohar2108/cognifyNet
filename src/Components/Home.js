@@ -107,7 +107,7 @@ const Home = () => {
         {/* Left Component */}
 
         {/* Center Component - Search Bar Section */}
-        <div className="max-w-[580px] w-full  mx-[210px] bg-white border border-gray-300 rounded-xl flex flex-col p-4 ">
+        <div className="max-w-[580px] w-full  mx-[210px] -my-[40px] bg-white border border-gray-300 rounded-xl flex flex-col p-4 ">
           {post ? (
             <>
               <div className="flex items-center">
@@ -147,11 +147,11 @@ const Home = () => {
       </div>
 
       {/* Video Section - Horizontal Scroll */}
-      <hr className="border-gray-400 mt-5 mx-[260px] w-[39%]" />
+      <hr className="border-gray-400 mt-[50px] mx-[260px] w-[39%]" />
 
       {/* Posts Section */}
       <div
-        className="flex-grow space-y-4 max-w-screen-lg mx-auto  mt-4 overflow-y-auto -mx-3"
+        className="flex-grow space-y-4 max-w-screen-lg mx-auto mt-3  scrollbar-hidden -mx-3"
         style={{ maxHeight: "calc(100vh - 64px)" }}
       >
         {posts.map((post) => (
