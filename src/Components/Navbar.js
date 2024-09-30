@@ -50,7 +50,7 @@ const Navbar = () => {
             N
           </span>
         </h1>
-        <ul className="flex flex-col space-y-4 w-full mt-5">
+        <ul className="flex flex-col space-y-3 w-full mt-5">
           {[
             { to: "/", icon: faHome, label: "Home" },
             { to: "/dashboard", icon: faTachometerAlt, label: "Dashboard" },

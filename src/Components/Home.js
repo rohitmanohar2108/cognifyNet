@@ -151,7 +151,7 @@ const Home = () => {
 
       {/* Posts Section */}
       <div
-        className="flex-grow space-y-4 max-w-screen-lg mx-auto mt-3  scrollbar-hidden -mx-[12px]"
+        className="flex-grow space-y-4 max-w-screen-lg  mt-3  scrollbar-hidden -mx-[12px]"
         style={{ maxHeight: "calc(100vh - 64px)" }}
       >
         {posts.map((post) => (
