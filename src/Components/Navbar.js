@@ -31,13 +31,26 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex flex-col items-center">
         <h1
-          className={`text-3xl font-bold bg-gradient-to-r from-black to-black bg-clip-text text-transparent tracking-wider mb-6 ${
+          className={`text-3xl font-bold bg-gradient-to-r from-black to-black bg-clip-text text-transparent tracking-wider mb-6 cursor-pointer  ${
             isHomeSection ? "" : "hidden"
           }`}
         >
-          CognifyNet
+          Cognify{" "}
+          <span className="border border-black px-2 py-1 rounded-md hover:bg-gray-100 text-blue-600">
+            Net
+          </span>
         </h1>
-        <ul className="flex flex-col space-y-4 w-full mt-5">
+        <h1
+          className={`text-3xl font-bold text-black mb-6 ${
+            isHomeSection ? "hidden" : ""
+          }`}
+        >
+          C{" "}
+          <span className="text-blue-600 border border-black px-1 rounded-md">
+            N
+          </span>
+        </h1>
+        <ul className="flex flex-col space-y-4 w-full mt-5 ">
           {[
             { to: "/", icon: faHome, label: "Home" },
             { to: "/dashboard", icon: faTachometerAlt, label: "Dashboard" },
@@ -57,15 +70,16 @@ const Navbar = () => {
             {
               to: "/profile",
               label: "Profile",
-              image: "https://media.licdn.com/dms/image/v2/D5635AQHdDi6OfTqrwg/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1725916584949?e=1727974800&v=beta&t=jBPq0oraBPcQWwtrMHxfzqBJLXZ5nYXX9y-LKjamJ-E", // Your profile image URL
+              image:
+                "https://media.licdn.com/dms/image/v2/D5635AQHdDi6OfTqrwg/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1725916584949?e=1727974800&v=beta&t=jBPq0oraBPcQWwtrMHxfzqBJLXZ5nYXX9y-LKjamJ-E", // Your profile image URL
             },
           ].map(({ to, icon, label, image }) => (
             <li
               key={label}
               className={`flex items-center cursor-pointer rounded py-3 mx-4 transition duration-300 ease-in-out ${
                 activeItem === label.toLowerCase().replace(" ", "-")
-                  ? "font-semibold hover:bg-gray-200 text-black"
-                  : "hover:bg-gray-200 hover:text-black"
+                  ? "font-semibold hover:bg-gray-200 text-black border border-gray-300 rounded-md"
+                  : "hover:bg-gray-200 hover:text-black "
               }`}
             >
               <Link
