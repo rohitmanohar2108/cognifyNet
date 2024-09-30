@@ -96,7 +96,7 @@ const Navbar = () => {
                   <img
                     src={image}
                     alt="Profile"
-                    className="rounded-full border-2 border-blue-600 h-10 w-10 mr-3"
+                    className="rounded-full border-2 border-blue-600 h-10 w-10 mr-3 -mx-[5px]"
                   />
                 ) : null}
                 <span className={`text-base ${isHomeSection ? "" : "hidden"}`}>
